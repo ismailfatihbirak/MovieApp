@@ -14,16 +14,16 @@ interface MovieApi {
         @Query("api_key") apiKey: String = API_KEY
     ): Discover
 
-    //https://api.themoviedb.org/3/discover/movie?api_key=3c7595560643527986a52ffda061167b
-    @GET("discover/movie")
-    suspend fun getDiscoverMovie(
+    //https://api.themoviedb.org/3/movie/top_rated?api_key=3c7595560643527986a52ffda061167b
+    @GET("movie/top_rated")
+    suspend fun getTopRatedMovie(
         @Query("api_key") apiKey: String = API_KEY
     ): Discover
 
     //https://api.themoviedb.org/3/movie/940721?api_key=3c7595560643527986a52ffda061167b
     @GET("movie/{movie_id}")
     suspend fun getDetailMovie(
-        @Path("movie_id") movie_id : String,
+        @Path("movie_id") movie_id: String,
         @Query("api_key") apiKey: String = API_KEY
     ): Detail
 }
