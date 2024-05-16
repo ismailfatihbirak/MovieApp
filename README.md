@@ -1,32 +1,73 @@
-# Mobillium Android Intern Challenge #1
+# Movie App
+- Popular movies
+- Top rated movies
+- Movies Detail
+## Features 
 
-## [Introduction](#introduction)
-In this challenge, you will develop a simple Android application of your choice using **Kotlin** and **Android Studio**. The application should be simple yet innovative, and it should demonstrate your understanding of basic programming concepts and Android development.
+- Kotlin 
+- Clean Architecture
+- Jetpack Compose
+- Hilt Dependency Injection
+- Coroutines flow
+- Retrofit Coil
+## API Reference 
 
-## [Before You Start](#before-you-start)
-Define a problem and design an app that fixes the problem.
+The app uses the [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) 
 
-To ensure a comprehensive and informative submission, update this **Readme file** with the following sections:
-- Overview: Briefly describe the problem your app solves.
-- Features: List and describe the key features of your app.
-- Technologies Used: Mention the technologies, libraries, tools, and frameworks used.
-- Acknowledgments: Give credit to any third-party libraries, assets, or resources used.
-- Brag out: Share insights into your development process. Discuss any challenges you encountered during the development and how you overcame them.
-- Screenshots: Include screenshots, GIFs or videos demonstrating your app's functionality.
-
-## [Requirements](#requirements)
-- Android app
-- Android Studio IDE
-- Kotlin
-- Passion ❤️
-
-## [Submission Guidelines](#submission-guidelines)
-- Utilize Git for version control. Make regular commits with meaningful messages to showcase a well-documented development process.
-
-## [Presentation](#presentation) 
-
-- Evaluation Process: After the submission deadline, all challenges will be reviewed. If your submission stands out and your challenge is accepted, you will be invited to a meeting with our team.
-- Presentation Meeting: During the meeting, you will have the opportunity to present your app and share your development experience. Use this time to walk us through the key features of your application, discuss any challenges you faced, and elaborate on the problem-solving strategies you employed.
+## Screenshoots
+| Home | Detail | 
+| ------ | ---- | 
+|<img src="https://i.imgur.com/3XafQO3.png" width="250" height="500"/>|<img src="https://i.imgur.com/vMG1x3j.png" width="250" height="500"/>|
 
 </br>
-We look forward to seeing your creativity in action and hearing about your journey during the presentation! 😊
+
+
+
+
+
+
+## Getting Started 🚀
+
+To run the Movie App locally, follow these steps:
+
+1. Clone the repository.
+2. Open the project in Android Studio.
+3. Build and run the app on an emulator or physical device.
+
+## What used in project?
+- Only [Kotlin](https://kotlinlang.org/) based
+- [Android Architecture Components](https://developer.android.com/topic/libraries/architecture)
+  - [Compose Navigation](https://developer.android.com/jetpack/compose/navigation) to manage composable transactions.
+  - [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - unique lifecycle in Jetpack Compose
+  - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Stores UI-related data that isn't destroyed on UI changes. 
+  - [Repository](https://developer.android.com/topic/architecture/data-layer) - Located in data layer that contains application data and business logic.
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) - is Android’s next generation and recommended modern toolkit for building native UI with declaritive style. It makes development UI simpler and more understandable on Android.
+- [Android Hilt](https://developer.android.com/training/dependency-injection/hilt-android) for dependency injection.
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines) for async. operations.
+- [Coil Compose](https://coil-kt.github.io/coil/compose/) to load image what comes from API.
+- [Material Design 3](https://m3.material.io/) is the latest version of Google’s open-source design system.
+
+## License ℹ️
+MIT License
+```
+Copyright (c) 2024 Ismail Fatih Birak
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
