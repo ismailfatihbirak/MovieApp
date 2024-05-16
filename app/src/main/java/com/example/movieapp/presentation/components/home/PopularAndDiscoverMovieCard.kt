@@ -12,7 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
-import com.example.movieapp.presentation.home.CustomText
 
 @Composable
 fun PopularAndDiscoverMovieCard(
