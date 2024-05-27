@@ -15,9 +15,14 @@
 The app uses the [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) 
 
 ## Screenshoots
-| Splash | Home | Search | Detail | 
-| ------ | ---- | ---- | ---- | 
-|<img src="https://i.imgur.com/jqQQ3zO.png" width="250" height="500"/>|<img src="https://i.imgur.com/f75BxRw.gif" width="250" height="500"/>|<img src="https://i.imgur.com/F4ZckCx.gif" width="250" height="500"/>|<img src="https://i.imgur.com/NjSq9xi.png" width="250" height="500"/>|
+| Splash | Home | Search |   
+| ------ | ---- | ---- | 
+|<img src="https://i.imgur.com/jqQQ3zO.png" width="250" height="500"/>|<img src="https://i.imgur.com/f75BxRw.gif" width="250" height="500"/>|<img src="https://i.imgur.com/F4ZckCx.gif" width="250" height="500"/>
+</br>
+
+| Detail | 
+| --- | 
+|<img src="https://i.imgur.com/NjSq9xi.png" width="250" height="500"/>|
 
 
 </br>
