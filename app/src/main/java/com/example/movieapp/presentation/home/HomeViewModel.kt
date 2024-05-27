@@ -4,8 +4,9 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.movieapp.domain.use_case.get_discover_movie.GetTopRatedMovieUseCase
+import com.example.movieapp.domain.use_case.get_genre_movie.GetGenreMovieUseCase
 import com.example.movieapp.domain.use_case.get_popular_movie.GetPopularMovieUseCase
+import com.example.movieapp.domain.use_case.get_search_movie.GetSearchMovieUseCase
 import com.example.movieapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
@@ -15,14 +16,19 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val getPopularMovieUseCase: GetPopularMovieUseCase,
-    private val getTopRatedMovieUseCase: GetTopRatedMovieUseCase
+    private val getGenreMovieUseCase: GetGenreMovieUseCase,
+    private val getSearchMovieUseCase: GetSearchMovieUseCase
 ) : ViewModel() {
 
     private val _popularState = mutableStateOf<HomeState>(HomeState())
     val popularState: State<HomeState> = _popularState
 
-    private val _topRatedState = mutableStateOf<HomeState>(HomeState())
-    val topRatedState: State<HomeState> = _topRatedState
+    private val _genreState = mutableStateOf<HomeState>(HomeState())
+    val genreState: State<HomeState> = _genreState
+
+    private val _searchState = mutableStateOf<HomeState>(HomeState())
+    val searchState: State<HomeState> = _searchState
+
 
     private fun getPopularMovie() {
         getPopularMovieUseCase.executeGetPopularMovie().onEach {
@@ -42,30 +48,54 @@ class HomeViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
-    private fun getTopRatedMovie() {
-        getTopRatedMovieUseCase.executeGetTopRatedMovie().onEach {
+    private fun getGenreMovie(genresId: String) {
+        getGenreMovieUseCase.executeGetGenreMovie(genresId = genresId).onEach {
             when (it) {
                 is Resource.Success -> {
-                    _topRatedState.value = it.data?.let { it1 -> HomeState(movie = it1) }!!
+                    _genreState.value = it.data?.let { it1 -> HomeState(movie = it1) }!!
                 }
 
                 is Resource.Loading -> {
-                    _topRatedState.value = HomeState(isLoading = true)
+                    _genreState.value = HomeState(isLoading = true)
                 }
 
                 is Resource.Error -> {
-                    _topRatedState.value = HomeState(error = it.message ?: "Error")
+                    _genreState.value = HomeState(error = it.message ?: "Error")
                 }
             }
         }.launchIn(viewModelScope)
     }
 
-    fun loadToapRatedMovie() {
-        getTopRatedMovie()
+    private fun getSearchMovie(query: String) {
+        getSearchMovieUseCase.executeGetSearchMovie(query).onEach {
+            when (it) {
+                is Resource.Success -> {
+                    _searchState.value = it.data?.let { it1 -> HomeState(movie = it1) }!!
+                }
+
+                is Resource.Loading -> {
+                    _searchState.value = HomeState(isLoading = true)
+                }
+
+                is Resource.Error -> {
+                    _searchState.value = HomeState(error = it.message ?: "Error")
+                }
+            }
+        }.launchIn(viewModelScope)
     }
+
 
     fun loadPopularMovie() {
         getPopularMovie()
     }
+
+    fun loadGetGenreMovie(genresId: String) {
+        getGenreMovie(genresId = genresId)
+    }
+
+    fun loadGetSearchMovie(query: String) {
+        getSearchMovie(query)
+    }
+
 
 }
