@@ -2,7 +2,6 @@ package com.example.movieapp.data.remote
 
 import com.example.movieapp.domain.model.detail.Detail
 import com.example.movieapp.domain.model.discover_popular.Discover
-import com.example.movieapp.domain.model.videos.Videos
 import com.example.movieapp.util.Constant.API_KEY
 import retrofit2.http.GET
 import retrofit2.http.Path

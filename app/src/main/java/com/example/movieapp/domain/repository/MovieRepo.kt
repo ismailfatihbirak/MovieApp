@@ -2,7 +2,6 @@ package com.example.movieapp.domain.repository
 
 import com.example.movieapp.domain.model.detail.Detail
 import com.example.movieapp.domain.model.discover_popular.Discover
-import com.example.movieapp.domain.model.videos.Videos
 
 
 interface MovieRepo {
