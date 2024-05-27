@@ -1,6 +1,6 @@
 # Movie App
 - Popular movies
-- Top rated movies
+- Search movies
 - Movies Detail
 ## Features 
 
@@ -15,9 +15,10 @@
 The app uses the [TMDB](https://developer.themoviedb.org/reference/intro/getting-started) 
 
 ## Screenshoots
-| Home | Detail | 
-| ------ | ---- | 
-|<img src="https://i.imgur.com/3XafQO3.png" width="250" height="500"/>|<img src="https://i.imgur.com/vMG1x3j.png" width="250" height="500"/>|
+| Splash | Home | Search | Detail | 
+| ------ | ---- | ---- | ---- | 
+|<img src="https://i.imgur.com/jqQQ3zO.png" width="250" height="500"/>|<img src="https://i.imgur.com/f75BxRw.gif" width="250" height="500"/>|<img src="https://i.imgur.com/F4ZckCx.gif" width="250" height="500"/>|<img src="https://i.imgur.com/NjSq9xi.png" width="250" height="500"/>|
+
 
 </br>
 
