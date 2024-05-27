@@ -2,6 +2,7 @@ package com.example.movieapp.data.remote
 
 import com.example.movieapp.domain.model.detail.Detail
 import com.example.movieapp.domain.model.discover_popular.Discover
+import com.example.movieapp.domain.model.videos.Videos
 import com.example.movieapp.util.Constant.API_KEY
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -14,9 +15,10 @@ interface MovieApi {
         @Query("api_key") apiKey: String = API_KEY
     ): Discover
 
-    //https://api.themoviedb.org/3/movie/top_rated?api_key=3c7595560643527986a52ffda061167b
-    @GET("movie/top_rated")
-    suspend fun getTopRatedMovie(
+    //https://api.themoviedb.org/3/discover/movie?with_genres=28&api_key=3c7595560643527986a52ffda061167b
+    @GET("discover/movie")
+    suspend fun getGenreMovie(
+        @Query("with_genres") genres_id: String,
         @Query("api_key") apiKey: String = API_KEY
     ): Discover
 
@@ -26,4 +28,13 @@ interface MovieApi {
         @Path("movie_id") movie_id: String,
         @Query("api_key") apiKey: String = API_KEY
     ): Detail
+
+
+    //https://api.themoviedb.org/3/search/movie?api_key=3c7595560643527986a52ffda061167b&query=barbie
+
+    @GET("search/movie")
+    suspend fun getSearchMovie(
+        @Query("api_key") apiKey: String = API_KEY,
+        @Query("query") query: String,
+    ): Discover
 }
